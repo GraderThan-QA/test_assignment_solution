@@ -1,0 +1,6 @@
+jupyter
+streamlit
+pandas
+numpy
+matplotlib
+pytest
