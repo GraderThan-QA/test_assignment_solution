@@ -21,6 +21,15 @@
             },
             "args": ["run", "${file}"],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "FastAPI: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "cwd": "${fileDirname}",
+            "args": ["${fileBasenameNoExtension}:app", "--host", "0.0.0.0", "--port", "28000"],
+            "console": "integratedTerminal"
         }
     ]
 }

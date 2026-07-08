@@ -7,6 +7,6 @@ services:
       - ..:/workspace:cached
     ports:
       - "28888:8888" # jupyter
-      - "28501:8501" # streamlit
-      - "28000:8000" # fastapi
+      - "28501:28501" # streamlit
+      - "28000:28000" # fastapi
     command: sleep infinity

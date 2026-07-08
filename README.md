@@ -14,7 +14,6 @@ By the end of this assignment you should be able to:
 Before you can work on this assignment you will need to make sure you've completed the one time course setup, here:
 https://mafudge.github.io/ist356/0-intro/0-0-setup.html 
 
-
 ---
 
 ## Project Layout

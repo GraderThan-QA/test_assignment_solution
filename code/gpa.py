@@ -1,3 +1,12 @@
+'''
+gpa.py
+
+Utilities for working with grade point averages (GPA),
+ including
+validating GPA values and determining the correspondin
+g academic level.
+'''
+
 def gpa_level(gpa : float) -> str:
     '''
     Determines the academic level based on the GPA.
@@ -30,4 +39,5 @@ def valid_gpa(gpa : float) -> bool:
         bool: True if valid, False otherwise.
     '''
     return 0 <= gpa <= 4.0
+
 
