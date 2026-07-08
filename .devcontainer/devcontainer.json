@@ -1,12 +1,13 @@
 {
-  "name": "IST356 Assignment 01",
+  "name": "IST356 Test Assignment",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "forwardPorts": [8888, 8501],
+  "forwardPorts": [28888, 28501, 28000],
   "portsAttributes": {
-    "8888": { "label": "Jupyter" },
-    "8501": { "label": "Streamlit" }
+    "28888": { "label": "Jupyter" },
+    "28501": { "label": "Streamlit" },
+    "28000": { "label": "FastAPI" }
   },
   "customizations": {
     "vscode": {

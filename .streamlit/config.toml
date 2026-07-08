@@ -1,0 +1,3 @@
+[server]
+port = 28502
+headless = false
