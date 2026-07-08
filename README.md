@@ -11,47 +11,45 @@ By the end of this assignment you should be able to:
 
 ### Prerequisites
 
-Before you can work on this assignment you will need to make sure you've completed the one time course setup, here:
-https://mafudge.github.io/ist356/0-intro/0-0-setup.html 
+Before you can work on this assignment you will need to make sure you've completed the one time course setup, here: https://mafudge.github.io/ist356/0-intro/0-0-setup.html 
 
----
-
-## Project Layout
+### Project Layout
 
 Each assignment in this course shares a common layout.
 
-- `code/` — the code / application. This is where you will read and write code.
+- `code/` — the code / application. This is where you will write code the code to complete the assignment.
 - `tests/` — the tests that verify your code is correct.
-- `reflection.md` — where you submit your reflection: what you learned, things that confused you, etc.
-- `requirements.txt` — the packages installed into the container. You don't run this manually; the container does.
-- `.devcontainer/` — the dev container configuration (Docker + VS Code setup). You don't need to edit this.
-- `.vscode/` — VS Code settings for running and debugging code and tests.
+- `code/reflection.txt` — where you submit your reflection. Read `reflection.md` for instructions
 - `README.md` — these instructions.
 
----
+> **NOTE**‼️ Only files in the `code` folder will be reviewed for grading.
 
-## Running the Code
+## Instructions
 
-To run a Python program (for example `code/gpa.py`):
+### Running the Code
 
-1. Open the file you want to run, e.g. `code/gpa.py`.
-2. From the menu: **Run => Run Without Debugging**.
-3. Interact with the program in the **TERMINAL** panel at the bottom. For `gpa.py`, type a GPA such as `3.3` and press **Enter**.
-4. The program's output appears in the terminal.
+1. Open the file you want to run, for example: `code/gpa.py`.
+2. Open the **Run and Debug** activity bar:   
+**Menu: View ==> Run**.
+3. Next to RUN AND DEBUG you will see a drop down. select the method of code execution:  
+    - **Python Debugger: Current File** - Run or debug a python file.
+    - **Stream Run: Current File** - Run or debug a python streamlit file.
+    - **Fast API: Current File** - Run or debug a python FastAPI file.
+4. Interacting with your code:  
+    - For regular python programs, the input/output will be in the  **TERMINAL** panel at the bottom. 
+    - For streamlit, open a web browser http://localhost:28502
+    - For FastAPI, open a web browser here: http://localhost:28000/docs
 
----
-
-## Running the Tests
+### Running the Tests
 
 Some code and tests are already working. These are sanity checks to confirm the container and VS Code are configured properly.
 
-1. Open **Testing** in the activity bar: **View => Testing** (the flask/beaker icon on the left).
-2. Expand the tree by clicking the **`>`** arrows: **assignment_01** => **test_assignment.py** until you can see the individual tests such as **test_should_pass**.
-3. Click the **Play** button `▶` next to a test to run it.
+1. Open **Testing** in the activity bar:   
+   **Menu: View => Testing**.
+2. Expand the tree by clicking the **`>`** arrows: **Project: Workspace** => **tests** until you can see the individual tests such as **test_should_pass**.
+3. Click the **Run Test** button `▶` next to a test to run it.
 4. A **green check** ✅ means the test passed.
 5. A **red X** ❌ means the test failed. When a test fails you'll get an error message and a stack trace with line numbers to help you find the problem.
-
----
 
 ## The Assignment
 
@@ -94,18 +92,24 @@ Write the program as described in the instructions at the top of `code/numbers.p
 
 Open `reflection.md` and complete it as instructed in the file. Your reflection is part of your submission.
 
----
 
-## Submitting Your Work
+## Submitting Your Work And Getting Automated Feedback
 
-You submit by **committing** your changes and **pushing** them to GitHub. You can do this from the VS Code Source Control panel or from the terminal.
+You are encouraged to submit your assignment for automated feedback anytime you need it prior to the due date. You can request feedback multiple times and use advice you recieve to improve your submission.
 
-### Option A — VS Code Source Control panel
+Its a simple, two-step process.
 
-1. Open **Source Control** in the activity bar: **View => Source Control** (or **Ctrl/Cmd+Shift+G**).
+1. Commit and push your code changes to Github.
+2. Ask GraderThan for feedback.
+
+### Commit and Push
+
+First the changes you've made locally (on your computer or in Github Codespaces) need to be sync'd with your Github repository.
+
+1. Open **Source Control** in the activity bar: **Menu: View => Source Control** 
 2. Review your changed files under **Changes**.
 3. Hover a file and click the **`+`** to **stage** it, or click the **`+`** next to **Changes** to stage everything.
-4. Type a short **commit message** in the message box (e.g. `fix gpa bugs and complete numbers`).
+4. Type a short **commit message** in the text box. The message should summarize the work you did. 
 5. Click the **Commit** button (the checkmark).
 6. Click **Sync Changes** (or **Push**) to send your commit to GitHub.
 
