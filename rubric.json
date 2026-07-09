@@ -115,7 +115,8 @@
         },
         {
           "name": "call gpa_level",
-          "description": "streamlit_*.py, console_*.py",
+          "description": "Modules must call gpa_level, not define it themselves",
+          "file": "streamlit_*.py, console_*.py",
           "require": [
             {
               "assign_call": "gpa_level"
