@@ -1,56 +1,265 @@
 {
   "version": 1,
-  "max": 8,
+  "max": 14,
   "code_path": "code",
   "cases": [
     {
-      "id": "test_assignment.py",
-      "name": "Assignment tests",
-      "description": "Automated tests in test_assignment.py — they check gpa.py and numbers.py.",
+      "id": "tests-base",
+      "name": "Base Unit tests",
       "judge": "auto",
       "max": 2,
-      "metric": "ratio",
+      "description": "Units tests on test_api_gpa.py and test_gpa.py are passing.",
+      "tests": [
+        "tests/test_api_gpa.py",
+        "tests/test_gpa.py"
+      ],
       "levels": [
-        { "id": "all", "label": "All tests pass", "points": 2, "min": 1 },
-        { "id": "some", "label": "At least one test passes", "points": 1, "min": 0.01 },
-        { "id": "none", "label": "No tests pass", "points": 0, "min": 0 }
+        {
+          "id": "all",
+          "label": "All Tests Pass",
+          "points": 2,
+          "min": 1
+        },
+        {
+          "id": "half",
+          "label": "At Least Half the tests Pass",
+          "points": 1,
+          "min": 0.5
+        },
+        {
+          "id": "lessthan",
+          "label": "Less than Half the tests pass",
+          "points": 0,
+          "min": 0
+        }
       ]
     },
     {
-      "id": "test_internal.py",
-      "name": "Internal tests",
-      "description": "Automated tests in test_internal.py — they check add.py and hello.py.",
+      "id": "tests-con",
+      "name": "Console Unit tests",
       "judge": "auto",
       "max": 2,
-      "metric": "ratio",
+      "description": "Tests on test_console.*.py are passing",
+      "tests": [
+        "tests/test_console_gpa.py",
+        "tests/test_console_same_level_gpa.py"
+      ],
       "levels": [
-        { "id": "all", "label": "All tests pass", "points": 2, "min": 1 },
-        { "id": "some", "label": "At least one test passes", "points": 1, "min": 0.01 },
-        { "id": "none", "label": "No tests pass", "points": 0, "min": 0 }
+        {
+          "id": "all",
+          "label": "All Tests Pass",
+          "points": 2,
+          "min": 1
+        },
+        {
+          "id": "half",
+          "label": "At Least Half the tests Pass",
+          "points": 1,
+          "min": 0.5
+        },
+        {
+          "id": "lessthan",
+          "label": "Less than Half the tests pass",
+          "points": 0,
+          "min": 0
+        }
       ]
     },
     {
-      "id": "code_style",
+      "id": "tests-st",
+      "name": "Streamlit Unit tests",
+      "judge": "auto",
+      "max": 2,
+      "description": "Streamlit tests are passing. test_streamlit_*.py",
+      "tests": [
+        "tests/test_streamlit_same_level_gpa.py",
+        "tests/test_streamlit_gpa.py"
+      ],
+      "levels": [
+        {
+          "id": "all",
+          "label": "All Tests Pass",
+          "points": 2,
+          "min": 1
+        },
+        {
+          "id": "half",
+          "label": "At Least Half the tests Pass",
+          "points": 1,
+          "min": 0.5
+        },
+        {
+          "id": "lessthan",
+          "label": "Less than Half the tests pass",
+          "points": 0,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "id": "check-module",
+      "name": "Code uses gpa module",
+      "judge": "static",
+      "max": 2,
+      "description": "Your code imports the gpa module and calls the correct functions from it",
+      "requirements": [
+        {
+          "name": "import gpa",
+          "description": "Must import gpa",
+          "file": "streamlit_*.py, console_*.py",
+          "require": [
+            {
+              "import": "gpa"
+            }
+          ]
+        },
+        {
+          "name": "call gpa_level",
+          "description": "streamlit_*.py, console_*.py",
+          "require": [
+            {
+              "assign_call": "gpa_level"
+            }
+          ],
+          "forbid": [
+            {
+              "def": "gpa_level"
+            }
+          ]
+        }
+      ],
+      "feedback": "ai",
+      "levels": [
+        {
+          "id": "completely",
+          "label": "Completely",
+          "points": 2,
+          "min": 1
+        },
+        {
+          "id": "Partially",
+          "label": "Somewhat",
+          "points": 1,
+          "min": 0.01
+        },
+        {
+          "id": "None",
+          "label": "Not at All",
+          "points": 0,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "id": "check-st",
+      "name": "Code Written to Expectations",
+      "judge": "static",
+      "max": 2,
+      "description": "Your streamlit code is using common streamlit functions taught in the course.",
+      "requirements": [
+        {
+          "name": "Uses streamlit in streamlit_gpa.py",
+          "description": "streamlit_gpa.py imports streamlit and uses button, number_input, title, write.",
+          "file": "streamlit_*.py",
+          "require": [
+            {
+              "import": "streamlit"
+            },
+            {
+              "call": "button"
+            },
+            {
+              "call": "number_input"
+            },
+            {
+              "call": "title"
+            },
+            {
+              "call": "write"
+            }
+          ]
+        }
+      ],
+      "feedback": "ai",
+      "levels": [
+        {
+          "id": "completely",
+          "label": "Completely",
+          "points": 2,
+          "min": 1
+        },
+        {
+          "id": "Partially",
+          "label": "Somewhat",
+          "points": 1,
+          "min": 0.01
+        },
+        {
+          "id": "None",
+          "label": "Not at All",
+          "points": 0,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "id": "code-clarity",
       "name": "Code style & readability",
-      "description": "Code is for computers AND humans. Humans should be able to read and understand the code you write.",
       "judge": "ai",
       "max": 2,
+      "description": "Code is for computers AND humans. Humans should be able to read and understand the code you write. You code should be clearly documented according to python's conventions: black, pylint",
       "levels": [
-        { "id": "clean", "label": "Exceptional", "points": 2, "description": "Idiomatic, readable, well factored. Has well placed comments and docstrings." },
-        { "id": "rough", "label": "Acceptable", "points": 1, "description": "Code works but hard to follow. Might be over commented or under commented. Might be missing docstrings." },
-        { "id": "poor", "label": "Unacceptable", "points": 0, "description": "Code is Unreadable / unstructured. Human cannot understand it." }
+        {
+          "id": "top",
+          "label": "Exceptional ",
+          "points": 2,
+          "description": "Code is Idiomatic, readable, well factored, well-formatted. Has well placed comments and docstrings in accordance with python linters.",
+          "min": 1
+        },
+        {
+          "id": "mid",
+          "label": "Acceptable ",
+          "points": 1,
+          "description": "Code works but has sections that are undocumented, missing docstrings, or are hard to follow the code flow. ",
+          "min": 0.01
+        },
+        {
+          "id": "low",
+          "label": "Unacceptable ",
+          "points": 0,
+          "description": "Code is Unreadable / unstructured. Completely lacking in docstrings, poorly structured.",
+          "min": 0
+        }
       ]
     },
     {
       "id": "reflection",
-      "name": "Reflection",
-      "description": "Now that you've completed the assignment, think about what you did and share your thoughts. What did you learn? What confuses you? Where did you struggle? Where might you need more practice? A good reflection is **as specific as possible**, **uses the terminology of the problem domain** (what was learned in class / through readings), and **is actionable** (you can pursue next steps, or be aided in the pursuit).",
+      "name": "Metacognitive reflection on the work you did",
       "judge": "ai",
       "max": 2,
+      "description": "Now that you've completed the assignment, think about what you did and share your thoughts. What did you learn? What confuses you? Where did you struggle? Where might you need more practice? A good reflection is as specific as possible, uses the terminology of the problem domain (what was learned in class / through readings), and is actionable (you can pursue next steps, or be aided in the pursuit). You will be judged on those criteria.",
       "levels": [
-        { "id": "excellent", "label": "Excellent", "points": 2, "description": "Well written, clear, and actionable. Uses terminology of the problem domain. Specific about what was learned and where more practice is needed." },
-        { "id": "needs_improvement", "label": "Needs Improvement", "points": 1, "description": "Missing one of: well written, actionable, clear, uses terminilogy specific to assignment, demonstrated what was learned." },
-        { "id": "poor", "label": "Missing or poor", "points": 0, "description": "Reflection missing or superficial." }
+        {
+          "id": "high",
+          "label": "Excellent ",
+          "points": 2,
+          "description": "Well written, clear, and actionable. Uses terminology of the problem domain. Specific about what was learned and where more practice is needed.",
+          "min": 1
+        },
+        {
+          "id": "mid",
+          "label": "Needs Improvement",
+          "points": 1,
+          "description": "Missing one of: well written, actionable, clear, uses terminology specific to assignment, demonstrated what was learned.",
+          "min": 0.01
+        },
+        {
+          "id": "low",
+          "label": "Missing or poor",
+          "points": 0,
+          "description": " Reflection missing or superficial.",
+          "min": 0
+        }
       ]
     }
   ]

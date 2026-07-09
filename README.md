@@ -102,7 +102,7 @@ Its a simple, two-step process.
 1. Commit and push your code changes to Github.
 2. Ask GraderThan for feedback.
 
-### Commit and Push
+### Step 1: Commit and Push Your Code Changes
 
 First the changes you've made locally (on your computer or in Github Codespaces) need to be sync'd with your Github repository.
 
@@ -111,32 +111,14 @@ First the changes you've made locally (on your computer or in Github Codespaces)
 3. Hover a file and click the **`+`** to **stage** it, or click the **`+`** next to **Changes** to stage everything.
 4. Type a short **commit message** in the text box. The message should summarize the work you did. 
 5. Click the **Commit** button (the checkmark).
-6. Click **Sync Changes** (or **Push**) to send your commit to GitHub.
+6. Click **Sync Changes** to send your commit(s) to GitHub.
 
-### Option B — Terminal
+### Step 2: Submit Request for Automated Feedback
 
-In the TERMINAL panel, run:
+1. Login to https://graderthan.cent-su.org using your SU Microsoft account, e.g. *netid*@syr.edu
+2. On your dashboard, click the assignment.
+3. From the Assignment Submission screen:  
+   - Enter your **forked Github assignment url**. e.g. https://github.com/YOURGITHUB/ASSIGNMENTNAME 
+   - Check **Email me feedback is ready** if you would like to be emailed when the feedback is done. The system queues requests so feedback is not instant.
+4. Click the **Submit for Grading and Feedback** button.
 
-```bash
-git add .
-git commit -m "fix gpa bugs and complete numbers"
-git push
-```
-
-You can commit and push as many times as you like. Each push is a new submission.
-
----
-
-## Grading
-
-🤖 Beep, Boop. This assignment is bot-graded! When you push your code to GitHub, my graderbot is notified there is something to grade. The bot then takes the following actions:
-
-1. Your assignment repository is cloned from GitHub.
-2. The bot checks your code and commits according to the guidelines outlined in `rubric.json` (it runs tests, checks code correctness, etc.).
-3. The bot reads your `reflection.md` and provides areas for improvement (based on the instructions in the file).
-4. A grade is assigned by the bot. Feedback is generated, including justification for the grade given.
-5. The grade and feedback are posted to Blackboard.
-
-You are welcome to review the bot's feedback and improve your submission as often as you like.
-
-**NOTE:** Consider this an experiment in the future of education. The graderbot is an AI teaching assistant. Like a human grader, it will make mistakes. Please feel free to question the bot's feedback! Do not feel as if you should gamify the bot. Talk to me! Like a person, we must teach it how to do its job effectively.
