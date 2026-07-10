@@ -1,3 +1,5 @@
 I am more comformatable with using the tests to help me figure out what i needo to complete in the assignments.
-For example, I used the test_streamlit tests to help me write the correct streamlit code.
-I need to practice writing and calling functions in python code as to rely less on the assistive support in vscode.
+For example, I used the test_streamlit tests to help me write the correct streamlit code. 
+The test code helped by clearly showing what was expected from the assignmet.
+I need to practice writing (def, python type hints) 
+and calling (invoking with arguments) in python code as to rely less on the AI assistive support in vscode.
